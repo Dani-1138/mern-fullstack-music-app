@@ -87,7 +87,7 @@ $ npm run build
 │   └── app.js
 ├── .env
 
-#Author - Daniel Demeke 
+# Author - Daniel Demeke 
         Arbaminch university 4th year software engineering student
         danieldemeke92@gmail.com
         
