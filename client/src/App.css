@@ -1,32 +1,30 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- 
 }
-.image{
-  background-image: url('../src/assets/rotat.png');
+.image {
+  background-image: url("../src/assets/rotat.png");
   background-position: center;
   background-size: cover;
   object-fit: cover;
 }
-.bottom-image{
+.bottom-image {
   /* background-image: url('../src/assets/rotate-cd.jpg'); */
   background-position: center;
   background-size: cover;
   object-fit: cover;
 }
-.logo-image{
-  background-image: url('../src/assets/rotat.png');
+.logo-image {
+  background-image: url("../src/assets/rotat.png");
   background-position: center;
   background-size: cover;
   object-fit: cover;
   margin-right: 1rem;
   margin-left: 0;
- 
 }
 
-.search-icon{
+.search-icon {
   color: #857c7c;
   height: 1.5rem;
   width: 1.5rem;
@@ -37,104 +35,111 @@
   background-color: white;
 } */
 
-.play-icon{
+.play-icon {
   position: absolute;
   top: 8px;
   right: 15px;
   color: #fff;
 }
-.icon{
+.icon {
   color: #fff;
 }
-.volume{
+.volume {
   color: #fff;
- 
 }
 
-.bar-txt{
+.bar-txt {
   color: #fff;
   margin-left: 10px;
 }
-.bar-txt .start{
+.bar-txt .start {
   margin-left: 50px;
 }
 
-.pause-icon{
+.pause-icon {
   width: 100px;
   height: 100px;
 }
-.hover-pause-icon:hover{
+.hover-pause-icon:hover {
   display: block;
 }
-.hover-pause-icon{
-  display: none
+.hover-pause-icon {
+  display: none;
 }
-.song-card-hover:hover .hover-pause-icon{
+.song-card-hover:hover .hover-pause-icon {
   opacity: 1;
   font-weight: bold;
   color: #fff;
   display: block;
   z-index: 222;
 }
-.song-card-hover:hover .favor-div{
+.song-card-hover:hover .favor-div {
   display: block;
 }
-.song-card-hover:hover .mainDiv3-hover{
+.song-card-hover:hover .mainDiv3-hover {
   display: block;
 }
 
-.rhap_container{
-  
+.rhap_container {
   background-color: transparent !important;
   height: 100%;
   box-shadow: none !important;
   background: rgb(30, 42, 62);
-  
+
   background: linear-gradient(
-  75deg,
-  rgba(54, 69, 98, 0) 0%,
-  rgb(40, 58, 88) 50%,
-  rgba(54, 69, 98, 0) 100%
-);
+    75deg,
+    rgba(54, 69, 98, 0) 0%,
+    rgb(40, 58, 88) 50%,
+    rgba(54, 69, 98, 0) 100%
+  );
 }
 
-.rhap_play-pause-button{
+.rhap_play-pause-button {
   color: #fff !important;
   transition: all 0.3s ease-in-out;
-
 }
 
-.rhap_play-pause-button:hover{
+.rhap_play-pause-button:hover {
   transform: scale(1.2);
 }
 
-.rhap_forward-button, .rhap_rewind-button, .rhap_skip-button, .rhap_volume-button, .rhap_repeat-button{
+.rhap_forward-button,
+.rhap_rewind-button,
+.rhap_skip-button,
+.rhap_volume-button,
+.rhap_repeat-button {
   transition: all 0.3s ease-in-out;
 }
 
-.rhap_forward-button:hover, .rhap_rewind-button:hover, .rhap_skip-button:hover, .rhap_volume-button:hover, .rhap_repeat-button:hover{
+.rhap_forward-button:hover,
+.rhap_rewind-button:hover,
+.rhap_skip-button:hover,
+.rhap_volume-button:hover,
+.rhap_repeat-button:hover {
   transform: scale(1.2);
-  color : #fff !important;
+  color: #fff !important;
 }
 
-.rhap_progress-filled{
+.rhap_progress-filled {
   width: 200px;
   background-color: #36e2ec !important;
 }
 
-.rhap_progress-indicator, .rhap_volume-indicator{
-  background: #b4b4b4  !important;
-  
+.rhap_progress-indicator,
+.rhap_volume-indicator {
+  background: #b4b4b4 !important;
 }
 
-.rhap_progress-indicator:hover, .rhap_volume-indicator:hover{
+.rhap_progress-indicator:hover,
+.rhap_volume-indicator:hover {
   transform: scale(1.2);
 }
-.rhap_time{
+.rhap_time {
   color: #fff;
 }
-.rhap_download-progress, .rhap_volume-bar{
-  background-color: #20c1dd !important; 
+.rhap_download-progress,
+.rhap_volume-bar {
+  background-color: #20c1dd !important;
   background-color: transparent !important;
   border: 0.001px solid #48525a;
 }
@@ -143,29 +148,29 @@
   color: #36e2ec;
   text-decoration: none;
 }
-a{
+a {
   font-size: 14px;
   font-weight: 400;
- 
+
   color: #4c5262;
   cursor: pointer;
   display: flex;
   align-items: center;
-  transition: .3s linear;
+  transition: 0.3s linear;
   text-decoration: none;
 }
-a:hover{
+a:hover {
   color: #fff;
 }
 
-.alert-add{
+.alert-add {
   background-color: rgb(202, 247, 202);
 }
-.alert-remove{
+.alert-remove {
   background-color: rgb(248, 218, 218);
 }
 
-.modal{
+.modal {
   width: 44vw;
   height: 1.5rem;
   align-items: center;
