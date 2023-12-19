@@ -26,15 +26,6 @@ function* Saga() {
    
 }
 
-// export const getAllSongs = async () => {
-//     try {
-//       const res = await axios.get(`${baseURL}api/songs/getAll`);
-//       return res.data;
-//     } catch (error) {
-//       return null;
-//     }
-//   };
-
 export const saveNewSong = async (data) => {
     try {
       const res = axios.post(`${baseURL}api/songs/addCar`, { ...data });
