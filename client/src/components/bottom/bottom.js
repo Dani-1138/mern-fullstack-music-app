@@ -1,7 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import {
-  Close,
-  VolumeUp,
   FavoriteBorder,
   Forward30,
   Pause,
@@ -14,11 +12,6 @@ import {
 import "../../App.css";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-import {
-  songReducer,
-  isSongPlayingReducer,
-  songsReducer,
-} from "../../redux/reducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { setSong } from "../../redux/action";
