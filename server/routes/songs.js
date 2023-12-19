@@ -2,37 +2,30 @@ const song = require("../models/song");
 
 const router = require("express").Router();
 
-// router.get("/getAll", async (req, res) => {
-//   const options = {
-//     // sort returned documents in ascending order
-//     sort: { createdAt: 1 },
-//     // Include only the following
-//     // projection : {}
-//   };
+router.get("/get-all", (req, res) => {
+  song
+    .find()
+    .sort({ name: 1 })
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
-//   const cursor = await song.find(options);
-//   if (cursor) {
-//     res.status(200).send({ success: true, data: cursor });
-//   } else {
-//     res.status(200).send({ success: true, msg: "No Data Found" });
-//   }
-// });
-
-router.get('/get-all', (req, res)=> {
-  song.find().sort({name : 1}).then((result)=>{
-    res.send(result);
-  }).catch((err)=>{
-    console.log(err);
-  })
-})
-
-router.get('/get-recent', (req, res)=> {
-  song.find().sort({createdAt : -1}).limit(10).then((result)=>{
-    res.send(result);
-  }).catch((err)=>{
-    console.log(err);
-  })
-})
+router.get("/get-recent", (req, res) => {
+  song
+    .find()
+    .sort({ createdAt: -1 })
+    .limit(10)
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 // router.post('/add-song',(req,res)=>{
 //   const data = req.body;
@@ -66,7 +59,6 @@ router.get("/getOne/:getOne", async (req, res) => {
 //     res.status(400).send({ success: false, msg: error });
 //   }
 // });
-
 
 router.put("/update/:updateId/:updateFavor", async (req, res) => {
   const filter = { _id: req.params.updateId };
@@ -122,24 +114,23 @@ router.put("/editName/:editId/:newName", async (req, res) => {
   }
 });
 
-
-router.post('/addCar', (req, res)=>{
-  console.log(req.body)
+router.post("/addCar", (req, res) => {
+  console.log(req.body);
   const addson = new song({
-      name: req.body.name,
-      imageURL: req.body.imageURL,
-      songUrl: req.body.songUrl,
-      album: req.body.album,
-      artist: req.body.artist,
-      language: req.body.language,
-      category: req.body.category,
-      favorite: req.body.favorite,
-  })
-  addson.save().then((err,doc)=>{
-      if(err) return console.log(err)
-      res.status(200).json(doc)
-  })
-})
+    name: req.body.name,
+    imageURL: req.body.imageURL,
+    songUrl: req.body.songUrl,
+    album: req.body.album,
+    artist: req.body.artist,
+    language: req.body.language,
+    category: req.body.category,
+    favorite: req.body.favorite,
+  });
+  addson.save().then((err, doc) => {
+    if (err) return console.log(err);
+    res.status(200).json(doc);
+  });
+});
 
 router.delete("/delete/:deleteId", async (req, res) => {
   const filter = { _id: req.params.deleteId };
@@ -151,7 +142,6 @@ router.delete("/delete/:deleteId", async (req, res) => {
     res.status(200).send({ success: false, msg: "Data Not Found" });
   }
 });
-
 
 router.get("/getFavouritesSongs", async (req, res) => {
   const query = req.query.songId;

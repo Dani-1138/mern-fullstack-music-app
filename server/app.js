@@ -1,16 +1,16 @@
-const express = require("express")
+const express = require("express");
 const app = express();
-require("dotenv/config")
-const bodyParser = require('body-parser')
+require("dotenv/config");
+const bodyParser = require("body-parser");
 const cors = require("cors");
-const {default : mongoose, modelNames} = require("mongoose")
+const { default: mongoose, modelNames } = require("mongoose");
 
-app.use(cors({origin : true}))
-app.use(bodyParser.json())
+app.use(cors({ origin: true }));
+app.use(bodyParser.json());
 
-app.get("/", (req, res)=>{
-    return res.json("Habesha Music")
-})
+app.get("/", (req, res) => {
+  return res.json("Habesha Music");
+});
 
 const userRout = require("./routes/home");
 app.use("/api/users/", userRout);
@@ -25,16 +25,14 @@ app.use("/api/albums/", albumsRout);
 const songsRout = require("./routes/songs");
 app.use("/api/songs/", songsRout);
 
-mongoose.connect(process.env.DATABASE, {useNewUrlParser : true});
+mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
 mongoose.connection
-.once("open", ()=> console.log("connected"))
-.on("error", (error) => {
+  .once("open", () => console.log("connected"))
+  .on("error", (error) => {
     console.log(`Error : ${error}`);
-})
-
-
+  });
 
 app.use(express.json());
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }));
 
-app.listen(4000,()=> console.log("listen to port 4000"));
+app.listen(4000, () => console.log("listen to port 4000"));
