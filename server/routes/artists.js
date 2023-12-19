@@ -1,27 +1,25 @@
 const artist = require("../models/artist");
-const express = require("express")
+const express = require("express");
 const router = require("express").Router();
 
-router.post('/addCar', (req, res)=>{
-  console.log(req.body)
+router.post("/addCar", (req, res) => {
+  console.log(req.body);
   const addson = new artist({
     name: req.body.name,
     imageURL: req.body.imageURL,
     twitter: req.body.twitter,
     instagram: req.body.instagram,
-  })
-  addson.save().then((err,doc)=>{
-      if(err) return console.log(err)
-      res.status(200).json(doc)
-  })
-})
-
+  });
+  addson.save().then((err, doc) => {
+    if (err) return console.log(err);
+    res.status(200).json(doc);
+  });
+});
 
 router.get("/getAll", async (req, res) => {
   const options = {
     // sort returned documents in ascending order
     sort: { name: 1 },
-
   };
 
   const cursor = await artist.find(options);
@@ -32,28 +30,34 @@ router.get("/getAll", async (req, res) => {
   }
 });
 
-router.get('/get-all', (req, res)=> {
-  artist.find().then((result)=>{
-    res.send(result);
-  }).catch((err)=>{
-    console.log(err);
-  })
-})
+router.get("/get-all", (req, res) => {
+  artist
+    .find()
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
-router.get('/add-artists',(req,res)=>{
+router.get("/add-artists", (req, res) => {
   const data = {
-		title: 'Don William',
-		imageURL: 'http://don',
-		twitter: 'don.twitter',
-    instagram: "don.instagram"
-	}
-	const blog = new artist(data);
-	blog.save().then((result) => {
-		res.send(result);
-	}).catch((err) =>{
-		console.log(err);
-	})
-})
+    title: "Don William",
+    imageURL: "http://don",
+    twitter: "don.twitter",
+    instagram: "don.instagram",
+  };
+  const blog = new artist(data);
+  blog
+    .save()
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 router.get("/getOne/:getOne", async (req, res) => {
   const filter = { _id: req.params.getOne };
@@ -67,16 +71,15 @@ router.get("/getOne/:getOne", async (req, res) => {
   }
 });
 
-router.get('/single-blog',(req,res)=>{
-	Blog.findById('5fcc5533d6fc7a16db842ef9')
-	.then((result)=>{
-		res.send(result);
-	})
-	.catch((err)=>{
-		console.log(err);
-	})
-})
-
+router.get("/single-blog", (req, res) => {
+  Blog.findById("5fcc5533d6fc7a16db842ef9")
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 // router.post("/save", async (req, res) => {
 //   const newArtist = artist({
