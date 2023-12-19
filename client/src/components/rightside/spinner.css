@@ -1,22 +1,21 @@
 @keyframes spinner {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
   }
-  .loading-spinner {
-    width: 100px;
-    height: 100px;
-    
-   
-    border: 15px solid #a3a3a3; 
-    border-top: 10px solid #383636; 
-    border-radius: 50%;
-    animation: spinner 1.5s linear infinite;
+  100% {
+    transform: rotate(360deg);
   }
-  .spinner-container{
-    text-align: center;
-    margin: 15% 40%;
-  }
+}
+.loading-spinner {
+  width: 100px;
+  height: 100px;
+
+  border: 15px solid #a3a3a3;
+  border-top: 10px solid #383636;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+.spinner-container {
+  text-align: center;
+  margin: 15% 40%;
+}
