@@ -88,7 +88,8 @@ $ npm run build
 ├── .env
 
 # Author - Daniel Demeke 
-        Arbaminch university 4th year software engineering student
+        Arbaminch university 5th year software engineering student
+        Alx-africa Student
         danieldemeke92@gmail.com
         
 deployed on netlify: https://dani-music.netlify.app/
