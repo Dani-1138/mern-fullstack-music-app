@@ -1,15 +1,12 @@
-import React from 'react'
-import AddNewSong from '../components/rightside/addNewSong'
-
+import React from "react";
+import AddNewSong from "../components/rightside/addNewSong";
 
 const AddSong = () => {
   return (
     <>
-      <AddNewSong>
-
-      </AddNewSong>
+      <AddNewSong></AddNewSong>
     </>
-  )
-}
+  );
+};
 
-export default AddSong
+export default AddSong;
