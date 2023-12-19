@@ -93,6 +93,6 @@ $ npm run build
         
 deployed on netlify: https://dani-music.netlify.app/
 
-# This app is created for the purpose of internship project test from addissoftware
+# This app is created for the purpose of Alx Final portifolio project
 
 
